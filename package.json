@@ -1,0 +1,40 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/app.js --legacy-watch",
+    "lint": "eslint . --fix",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MERN-TEST-24/Back-end.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MERN-TEST-24/Back-end/issues"
+  },
+  "homepage": "https://github.com/MERN-TEST-24/Back-end#readme",
+  "dependencies": {
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "express": "^4.19.2",
+    "husky": "^8.0.0",
+    "mongodb": "^4.2.2",
+    "mongoose": "^8.4.0",
+    "nodemon": "^3.1.0",
+    "lint-staged": "^13.0.2",
+    "prettier": "2.5.1"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
