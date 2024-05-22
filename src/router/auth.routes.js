@@ -4,13 +4,13 @@ import bcrypt from 'bcrypt'
 import { check, validationResult } from 'express-validator'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
-const router = Router()
+const authRouter = Router()
 
 dotenv.config()
 
 // /api/auth/register
-router.post(
-  '/auth/register',
+authRouter.post(
+  '/register',
   [
     check('email', 'Invalid email').isEmail(),
     check(
@@ -54,8 +54,8 @@ router.post(
 )
 
 // /api/auth/login
-router.post(
-  '/auth/login',
+authRouter.post(
+  '/login',
   [
     check('email', 'Invalid email').normalizeEmail().isEmail(),
     check('password', 'Invalid password').isLength({ min: 8 })
@@ -92,4 +92,4 @@ router.post(
     }
   }
 )
-export default router
+export default authRouter

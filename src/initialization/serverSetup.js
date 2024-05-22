@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import DBstart from './database.js'
-import router from '../routes/auth.routes.js'
+import router from '../router/routes.js'
 
 dotenv.config()
 
