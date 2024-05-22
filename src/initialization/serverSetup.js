@@ -10,7 +10,7 @@ const PORT = process.env.SERVER_PORT
 const serverSetup = async (app) => {
   await DBstart()
   app.use(express.json({ extended: true }))
-  app.use('/api/auth', router)
+  app.use('/api', router)
   return app.listen(PORT, () => console.log(`started on port ${PORT}`))
 }
 

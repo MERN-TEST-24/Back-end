@@ -10,7 +10,7 @@ dotenv.config()
 
 // /api/auth/register
 router.post(
-  '/register',
+  '/auth/register',
   [
     check('email', 'Invalid email').isEmail(),
     check(
@@ -55,7 +55,7 @@ router.post(
 
 // /api/auth/login
 router.post(
-  '/login',
+  '/auth/login',
   [
     check('email', 'Invalid email').normalizeEmail().isEmail(),
     check('password', 'Invalid password').isLength({ min: 8 })
